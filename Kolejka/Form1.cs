@@ -16,9 +16,10 @@ namespace Kolejka
         {
             InitializeComponent();
 
-            
-            
 
+            
+            
+            data.Text = DateTime.Now.ToString("d/M/yyyy");
 
         }
 
@@ -27,6 +28,9 @@ namespace Kolejka
 
         }
 
-        
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

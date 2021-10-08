@@ -33,6 +33,7 @@ namespace Kolejka
             this.wprowadz_nazwe_badan = new System.Windows.Forms.TextBox();
             this.podaj_imie = new System.Windows.Forms.TextBox();
             this.podaj_imie_text = new System.Windows.Forms.Label();
+            this.data = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nazwa_badan_text
@@ -67,11 +68,21 @@ namespace Kolejka
             this.podaj_imie_text.TabIndex = 3;
             this.podaj_imie_text.Text = "Podaj imię:";
             // 
+            // data
+            // 
+            this.data.AutoSize = true;
+            this.data.Location = new System.Drawing.Point(714, 27);
+            this.data.Name = "data";
+            this.data.Size = new System.Drawing.Size(38, 15);
+            this.data.TabIndex = 4;
+            this.data.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.data);
             this.Controls.Add(this.podaj_imie_text);
             this.Controls.Add(this.podaj_imie);
             this.Controls.Add(this.wprowadz_nazwe_badan);
@@ -90,6 +101,7 @@ namespace Kolejka
         private System.Windows.Forms.TextBox wprowadz_nazwe_badan;
         private System.Windows.Forms.TextBox podaj_imie;
         private System.Windows.Forms.Label podaj_imie_text;
+        private System.Windows.Forms.Label data;
     }
 }
 
