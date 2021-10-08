@@ -19,7 +19,7 @@ namespace Kolejka
 
             
             
-            data.Text = DateTime.Now.ToString("d/M/yyyy");
+            
 
         }
 
@@ -29,6 +29,18 @@ namespace Kolejka
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            data.Text = DateTime.Now.ToString("d/M/yyyy");
+            Godzina.Text = DateTime.Now.ToString("t");
+        }
+
+        private void podaj_date_text_Click(object sender, EventArgs e)
         {
 
         }
