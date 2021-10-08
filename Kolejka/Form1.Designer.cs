@@ -40,6 +40,7 @@ namespace Kolejka
             this.Godzina = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dodaj_do_kolejki = new System.Windows.Forms.Button();
+            this.usun_z_kolejki = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nazwa_badan_text
@@ -122,12 +123,23 @@ namespace Kolejka
             this.dodaj_do_kolejki.TabIndex = 8;
             this.dodaj_do_kolejki.Text = "Dodaj do kolejki";
             this.dodaj_do_kolejki.UseVisualStyleBackColor = true;
+            this.dodaj_do_kolejki.Click += new System.EventHandler(this.dodaj_do_kolejki_Click);
+            // 
+            // usun_z_kolejki
+            // 
+            this.usun_z_kolejki.Location = new System.Drawing.Point(254, 261);
+            this.usun_z_kolejki.Name = "usun_z_kolejki";
+            this.usun_z_kolejki.Size = new System.Drawing.Size(92, 23);
+            this.usun_z_kolejki.TabIndex = 9;
+            this.usun_z_kolejki.Text = "Usun z kolejki";
+            this.usun_z_kolejki.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.usun_z_kolejki);
             this.Controls.Add(this.dodaj_do_kolejki);
             this.Controls.Add(this.Godzina);
             this.Controls.Add(this.podaj_date_text);
@@ -157,6 +169,7 @@ namespace Kolejka
         private System.Windows.Forms.Label Godzina;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button dodaj_do_kolejki;
+        private System.Windows.Forms.Button usun_z_kolejki;
     }
 }
 

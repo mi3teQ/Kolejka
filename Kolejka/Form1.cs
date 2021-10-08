@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,10 @@ namespace Kolejka
         {
             InitializeComponent();
 
+            
 
-            
-            
-            
+
+
 
         }
 
@@ -43,6 +44,13 @@ namespace Kolejka
         private void podaj_date_text_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dodaj_do_kolejki_Click(object sender, EventArgs e)
+        {
+            Queue kolejkapacjent = new Queue();
+            kolejkapacjent.Enqueue(podaj_imie);
+            //kolejkapacjent.Count;
         }
     }
 }
