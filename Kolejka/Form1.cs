@@ -16,7 +16,7 @@ namespace Kolejka
         public Form1()
         {
             InitializeComponent();
-
+            //a
             
 
 
