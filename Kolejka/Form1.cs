@@ -139,7 +139,7 @@ namespace Kolejka
                     //na czerwono dzisiaj
                 }
                 else(liczba_dni > 0){
-                    data_badania_poprzedni_pacjent.Text = ("badanie odbylo sie ", liczba_dni.ToString(), "dni temu");
+                   // data_badania_poprzedni_pacjent.Text = ("badanie odbylo sie ", liczba_dni.ToString(), "dni temu");
                     //kursywa
                 }
 
