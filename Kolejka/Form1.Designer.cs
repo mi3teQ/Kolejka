@@ -42,8 +42,6 @@ namespace Kolejka
             this.dodaj_do_kolejki = new System.Windows.Forms.Button();
             this.usun_z_kolejki = new System.Windows.Forms.Button();
             this.aktualny_pacjent = new System.Windows.Forms.Label();
-            this.wwww1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +58,7 @@ namespace Kolejka
             this.data_badania_poprzedni_pacjent = new System.Windows.Forms.Label();
             this.data_badania_wybrany_pacjent = new System.Windows.Forms.Label();
             this.data_badania_nastepny_pacjent = new System.Windows.Forms.Label();
+            this.zapisz_do_pliku = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,31 +160,12 @@ namespace Kolejka
             // 
             this.aktualny_pacjent.AutoSize = true;
             this.aktualny_pacjent.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.aktualny_pacjent.Location = new System.Drawing.Point(588, 319);
+            this.aktualny_pacjent.Location = new System.Drawing.Point(404, 309);
             this.aktualny_pacjent.Name = "aktualny_pacjent";
             this.aktualny_pacjent.Size = new System.Drawing.Size(40, 15);
             this.aktualny_pacjent.TabIndex = 10;
             this.aktualny_pacjent.Text = "label1";
             this.aktualny_pacjent.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // wwww1
-            // 
-            this.wwww1.Location = new System.Drawing.Point(63, 291);
-            this.wwww1.Name = "wwww1";
-            this.wwww1.Size = new System.Drawing.Size(234, 23);
-            this.wwww1.TabIndex = 11;
-            this.wwww1.Text = "button1";
-            this.wwww1.UseVisualStyleBackColor = true;
-            this.wwww1.Click += new System.EventHandler(this.poprzedni_pacjent_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(63, 184);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 94);
-            this.listBox1.TabIndex = 12;
             // 
             // label1
             // 
@@ -198,16 +178,20 @@ namespace Kolejka
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Imie,
             this.Nazwa_badan,
             this.Data_badania});
-            this.dataGridView1.Location = new System.Drawing.Point(588, 128);
+            this.dataGridView1.Location = new System.Drawing.Point(167, 122);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(460, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 150);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -215,11 +199,13 @@ namespace Kolejka
             // 
             this.Imie.HeaderText = "Imie";
             this.Imie.Name = "Imie";
+            this.Imie.Width = 150;
             // 
             // Nazwa_badan
             // 
             this.Nazwa_badan.HeaderText = "Nazwa_badan";
             this.Nazwa_badan.Name = "Nazwa_badan";
+            this.Nazwa_badan.Width = 150;
             // 
             // Data_badania
             // 
@@ -229,7 +215,7 @@ namespace Kolejka
             // nastepny_pacjent
             // 
             this.nastepny_pacjent.AutoSize = true;
-            this.nastepny_pacjent.Location = new System.Drawing.Point(588, 351);
+            this.nastepny_pacjent.Location = new System.Drawing.Point(404, 341);
             this.nastepny_pacjent.Name = "nastepny_pacjent";
             this.nastepny_pacjent.Size = new System.Drawing.Size(38, 15);
             this.nastepny_pacjent.TabIndex = 15;
@@ -238,7 +224,7 @@ namespace Kolejka
             // poprzedni_pacjent
             // 
             this.poprzedni_pacjent.AutoSize = true;
-            this.poprzedni_pacjent.Location = new System.Drawing.Point(588, 291);
+            this.poprzedni_pacjent.Location = new System.Drawing.Point(404, 281);
             this.poprzedni_pacjent.Name = "poprzedni_pacjent";
             this.poprzedni_pacjent.Size = new System.Drawing.Size(38, 15);
             this.poprzedni_pacjent.TabIndex = 16;
@@ -247,7 +233,7 @@ namespace Kolejka
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(480, 291);
+            this.label2.Location = new System.Drawing.Point(296, 281);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 15);
             this.label2.TabIndex = 17;
@@ -256,7 +242,7 @@ namespace Kolejka
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(480, 319);
+            this.label3.Location = new System.Drawing.Point(296, 309);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 15);
             this.label3.TabIndex = 18;
@@ -265,7 +251,7 @@ namespace Kolejka
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(480, 350);
+            this.label4.Location = new System.Drawing.Point(296, 340);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 15);
             this.label4.TabIndex = 19;
@@ -274,7 +260,7 @@ namespace Kolejka
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(660, 291);
+            this.label5.Location = new System.Drawing.Point(476, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 15);
             this.label5.TabIndex = 20;
@@ -283,7 +269,7 @@ namespace Kolejka
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(660, 319);
+            this.label6.Location = new System.Drawing.Point(476, 309);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 15);
             this.label6.TabIndex = 21;
@@ -292,7 +278,7 @@ namespace Kolejka
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(660, 349);
+            this.label7.Location = new System.Drawing.Point(476, 339);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 15);
             this.label7.TabIndex = 22;
@@ -301,7 +287,7 @@ namespace Kolejka
             // data_badania_poprzedni_pacjent
             // 
             this.data_badania_poprzedni_pacjent.AutoSize = true;
-            this.data_badania_poprzedni_pacjent.Location = new System.Drawing.Point(752, 291);
+            this.data_badania_poprzedni_pacjent.Location = new System.Drawing.Point(568, 281);
             this.data_badania_poprzedni_pacjent.Name = "data_badania_poprzedni_pacjent";
             this.data_badania_poprzedni_pacjent.Size = new System.Drawing.Size(38, 15);
             this.data_badania_poprzedni_pacjent.TabIndex = 23;
@@ -310,7 +296,7 @@ namespace Kolejka
             // data_badania_wybrany_pacjent
             // 
             this.data_badania_wybrany_pacjent.AutoSize = true;
-            this.data_badania_wybrany_pacjent.Location = new System.Drawing.Point(752, 319);
+            this.data_badania_wybrany_pacjent.Location = new System.Drawing.Point(568, 309);
             this.data_badania_wybrany_pacjent.Name = "data_badania_wybrany_pacjent";
             this.data_badania_wybrany_pacjent.Size = new System.Drawing.Size(38, 15);
             this.data_badania_wybrany_pacjent.TabIndex = 24;
@@ -319,17 +305,28 @@ namespace Kolejka
             // data_badania_nastepny_pacjent
             // 
             this.data_badania_nastepny_pacjent.AutoSize = true;
-            this.data_badania_nastepny_pacjent.Location = new System.Drawing.Point(752, 348);
+            this.data_badania_nastepny_pacjent.Location = new System.Drawing.Point(568, 338);
             this.data_badania_nastepny_pacjent.Name = "data_badania_nastepny_pacjent";
             this.data_badania_nastepny_pacjent.Size = new System.Drawing.Size(38, 15);
             this.data_badania_nastepny_pacjent.TabIndex = 25;
             this.data_badania_nastepny_pacjent.Text = "label8";
+            // 
+            // zapisz_do_pliku
+            // 
+            this.zapisz_do_pliku.Location = new System.Drawing.Point(167, 281);
+            this.zapisz_do_pliku.Name = "zapisz_do_pliku";
+            this.zapisz_do_pliku.Size = new System.Drawing.Size(121, 23);
+            this.zapisz_do_pliku.TabIndex = 26;
+            this.zapisz_do_pliku.Text = "Zapisz do pliku";
+            this.zapisz_do_pliku.UseVisualStyleBackColor = true;
+            this.zapisz_do_pliku.Click += new System.EventHandler(this.zapisz_do_pliku_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 650);
+            this.Controls.Add(this.zapisz_do_pliku);
             this.Controls.Add(this.data_badania_nastepny_pacjent);
             this.Controls.Add(this.data_badania_wybrany_pacjent);
             this.Controls.Add(this.data_badania_poprzedni_pacjent);
@@ -343,8 +340,6 @@ namespace Kolejka
             this.Controls.Add(this.nastepny_pacjent);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.wwww1);
             this.Controls.Add(this.aktualny_pacjent);
             this.Controls.Add(this.usun_z_kolejki);
             this.Controls.Add(this.dodaj_do_kolejki);
@@ -379,13 +374,8 @@ namespace Kolejka
         private System.Windows.Forms.Button dodaj_do_kolejki;
         private System.Windows.Forms.Button usun_z_kolejki;
         private System.Windows.Forms.Label aktualny_pacjent;
-        private System.Windows.Forms.Button wwww1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Imie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa_badan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_badania;
         private System.Windows.Forms.Label nastepny_pacjent;
         private System.Windows.Forms.Label poprzedni_pacjent;
         private System.Windows.Forms.Label label2;
@@ -397,6 +387,10 @@ namespace Kolejka
         private System.Windows.Forms.Label data_badania_poprzedni_pacjent;
         private System.Windows.Forms.Label data_badania_wybrany_pacjent;
         private System.Windows.Forms.Label data_badania_nastepny_pacjent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Imie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa_badan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_badania;
+        private System.Windows.Forms.Button zapisz_do_pliku;
     }
 }
 

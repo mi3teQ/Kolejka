@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,7 +61,7 @@ namespace Kolejka
         {
             nazwa = podaj_imie.Text;
             nazwa_badania = wprowadz_nazwe_badan.Text;
-            dataa = wybierz_date.Value.Date;
+            string dataa = wybierz_date.Value.ToString("dd.MM.yyyy");
             //kolejkapacjent.Enqueue(podaj_imie.ToString());
 
             //aktualny_pacjent.Text = kolejkapacjent.Peek();
@@ -110,11 +111,7 @@ namespace Kolejka
         private void poprzedni_pacjent_Click(object sender, EventArgs e)
         {
 
-            kolejkapacjent.Dequeue();
-            foreach (Object obj in kolejkapacjent)
-            {
-                aktualny_pacjent.Text = (obj.ToString());
-            }
+            
 
             
             
@@ -229,6 +226,30 @@ namespace Kolejka
                 data_badania_nastepny_pacjent.Font = new Font("Arial", 10, FontStyle.Regular);
                 data_badania_nastepny_pacjent.Text = ("Brak");
             }
+        }
+
+        private void zapisz_do_pliku_Click(object sender, EventArgs e)
+        {
+            string kolejka_csv = string.Empty;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null)
+                    {
+                        kolejka_csv += cell.Value.ToString().TrimEnd(',').Replace(",", ";") + ';';
+                    }
+                }
+                kolejka_csv += "\r\n";
+            }
+            string folderPath = "c:\\temp\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            File.WriteAllText(folderPath + "kolejka.txt", kolejka_csv);
+            MessageBox.Show("Zapisano do pliku");
         }
     }
 }
