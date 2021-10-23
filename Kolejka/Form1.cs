@@ -78,7 +78,7 @@ namespace Kolejka
 
 
             dataGridView1.Rows.Add(nazwa,nazwa_badania,dataa );
-
+            dataGridView1.Sort(dataGridView1.Columns[2], ListSortDirection.Ascending);
 
         }
 
@@ -132,35 +132,102 @@ namespace Kolejka
 
                 if (liczba_dni < 0)
                 {
+                    data_badania_poprzedni_pacjent.ForeColor = Color.FromArgb(0, 0, 0);
+                    data_badania_poprzedni_pacjent.Font = new Font("Arial", 10, FontStyle.Italic | FontStyle.Bold);
+                    int liczbadni2 = System.Math.Abs(liczba_dni);
+                    data_badania_poprzedni_pacjent.Text = ("badanie odbedzie sie za " + liczbadni2.ToString() + "dni");
                     //ustawic kursywy pogrubiona w labelce 
-                }else if(liczba_dni == 0)
+                }
+                if(liczba_dni == 0)
                 {
+                    data_badania_poprzedni_pacjent.ForeColor = Color.FromArgb(255, 0, 0);
+                    data_badania_poprzedni_pacjent.Font = new Font("Arial", 10, FontStyle.Italic | FontStyle.Bold);
                     data_badania_poprzedni_pacjent.Text = ("Dzisiaj");
                     //na czerwono dzisiaj
                 }
-                else(liczba_dni > 0){
-                   // data_badania_poprzedni_pacjent.Text = ("badanie odbylo sie ", liczba_dni.ToString(), "dni temu");
+                if(liczba_dni > 0){
+                    data_badania_poprzedni_pacjent.ForeColor = Color.FromArgb(0, 0, 0);
+                    data_badania_poprzedni_pacjent.Font = new Font("Arial", 10, FontStyle.Italic);
+                    data_badania_poprzedni_pacjent.Text = ("badanie odbylo sie " + liczba_dni.ToString() + "dni temu");
                     //kursywa
                 }
 
-                data_badania_poprzedni_pacjent.Text = liczba_dni.ToString();
+                //data_badania_poprzedni_pacjent.Text = liczba_dni.ToString();
 
             }
             else
             {
                 poprzedni_pacjent.Text = ("Brak");
+                data_badania_poprzedni_pacjent.ForeColor = Color.FromArgb(0, 0, 0);
+                data_badania_poprzedni_pacjent.Font = new Font("Arial", 10, FontStyle.Regular);
+                data_badania_poprzedni_pacjent.Text = ("Brak");
             }
             
             aktualny_pacjent.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            
-            
+            liczba_dni = (DateTime.Now - Convert.ToDateTime(dataGridView1.Rows[dataGridView1.CurrentRow.Index ].Cells[2].Value)).Days;
+
+            if (liczba_dni < 0)
+            {
+                data_badania_wybrany_pacjent.ForeColor = Color.FromArgb(0, 0, 0);
+                data_badania_wybrany_pacjent.Font = new Font("Arial", 10, FontStyle.Italic | FontStyle.Bold);
+                int liczbadni2 = System.Math.Abs(liczba_dni);
+                data_badania_wybrany_pacjent.Text = ("badanie odbedzie sie za " + liczbadni2.ToString() + "dni");
+                //ustawic kursywy pogrubiona w labelce 
+            }
+            if (liczba_dni == 0)
+            {
+                data_badania_wybrany_pacjent.ForeColor = Color.FromArgb(255, 0, 0);
+                data_badania_wybrany_pacjent.Font = new Font("Arial", 10, FontStyle.Italic | FontStyle.Bold);
+                data_badania_wybrany_pacjent.Text = ("Dzisiaj");
+                //na czerwono dzisiaj
+            }
+            if (liczba_dni > 0)
+            {
+                data_badania_wybrany_pacjent.ForeColor = Color.FromArgb(0, 0, 0);
+                data_badania_wybrany_pacjent.Font = new Font("Arial", 10, FontStyle.Italic);
+                data_badania_wybrany_pacjent.Text = ("badanie odbylo sie " + liczba_dni.ToString() + "dni temu");
+                //kursywa
+            }
+
+
             if (dataGridView1.CurrentCell.RowIndex < dataGridView1.Rows.Count - 2)
             {
                 nastepny_pacjent.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index + 1].Cells[0].Value.ToString();
+
+                liczba_dni = (DateTime.Now - Convert.ToDateTime(dataGridView1.Rows[dataGridView1.CurrentRow.Index + 1].Cells[2].Value)).Days;
+
+                if (liczba_dni < 0)
+                {
+                    data_badania_nastepny_pacjent.ForeColor = Color.FromArgb(0, 0, 0);
+                    data_badania_nastepny_pacjent.Font = new Font("Arial", 10, FontStyle.Italic | FontStyle.Bold);
+                    int liczbadni2 = System.Math.Abs(liczba_dni);
+                    data_badania_nastepny_pacjent.Text = ("badanie odbedzie sie za " + liczbadni2.ToString() + "dni");
+                    //ustawic kursywy pogrubiona w labelce 
+                }
+                if (liczba_dni == 0)
+                {
+                    data_badania_nastepny_pacjent.ForeColor = Color.FromArgb(255, 0, 0);
+                    data_badania_nastepny_pacjent.Font = new Font("Arial", 10, FontStyle.Italic | FontStyle.Bold);
+                    data_badania_nastepny_pacjent.Text = ("Dzisiaj");
+                    //na czerwono dzisiaj
+                }
+                if (liczba_dni > 0)
+                {
+                    data_badania_nastepny_pacjent.ForeColor = Color.FromArgb(0, 0, 0);
+                    data_badania_nastepny_pacjent.Font = new Font("Arial", 10, FontStyle.Italic);
+                    data_badania_nastepny_pacjent.Text = ("badanie odbylo sie " + liczba_dni.ToString() + "dni temu");
+                    //kursywa
+                }
+
+
+
             }
             else
             {
                 nastepny_pacjent.Text = ("Brak");
+                data_badania_nastepny_pacjent.ForeColor = Color.FromArgb(0, 0, 0);
+                data_badania_nastepny_pacjent.Font = new Font("Arial", 10, FontStyle.Regular);
+                data_badania_nastepny_pacjent.Text = ("Brak");
             }
         }
     }
