@@ -100,22 +100,14 @@ namespace Kolejka
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void podaj_imie_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void poprzedni_pacjent_Click(object sender, EventArgs e)
         {
-
-
-
-
-
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -149,14 +141,11 @@ namespace Kolejka
 
         private void Godzina_Click(object sender, EventArgs e)
         {
-
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            
-               
-            }
+        }
 
         private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
         {
@@ -165,7 +154,6 @@ namespace Kolejka
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-          
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -268,8 +256,6 @@ namespace Kolejka
                         data_badania_nastepny_pacjent.Text = ("badanie odbylo sie " + liczba_dni.ToString() + "dni temu");
                         //kursywa
                     }
-
-
 
                 }
                 else
